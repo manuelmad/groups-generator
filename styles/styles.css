@@ -46,6 +46,7 @@ main {
 	width: 100%;
 	font-size: var(--sm);
 	padding-top: 4rem;
+	min-height: 50rem;
 }
 
 section {
@@ -59,6 +60,8 @@ h1 {
 	font-size: var(--xlg);
 	margin-bottom: 2rem;
 	color: var(--white);
+	text-transform: uppercase;
+	margin-bottom: 4rem;
 }
 
 div {
@@ -75,11 +78,19 @@ table {
 	margin: 2rem auto;
 	border-collapse: collapse;
 	min-width: 25rem;
+	height: 9rem;
 }
 
 table tr, table td, table th {
-	border: 0.1rem solid var(--white);
-	height: 2rem;
+	border: 0.1rem solid var(--black);
+}
+
+thead {
+	color: var(--black);
+}
+
+tbody {
+	background-color: var(--background-article);
 }
 
 thead tr:nth-child(2) th:first-child {
@@ -93,6 +104,13 @@ tbody tr td:first-child {
 
 tbody tr td:nth-child(2) {
 	padding-left: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+thead tr, tbody tr {
+	height: 3rem;
+	max-height: 4.2rem;
 }
 
 .logo-container {
@@ -104,8 +122,15 @@ tbody tr td:nth-child(2) {
 	background-size: contain;
 }
 
+.groups-generator__container {
+	padding-bottom: 5rem;
+}
+
 .boton-examinar-container {
 	text-align: start;
+	border: 0.1rem solid var(--planeta-geek-celeste);
+	border-radius: 0.5rem;
+	padding: 1rem;
 }
 
 .boton-examinar-container label {
@@ -113,19 +138,19 @@ tbody tr td:nth-child(2) {
 }
 
 #file {
-	margin-top: 2rem;
+	margin: 2rem auto 0;
+	width: 28rem;
 }
 
 #quantity_notification {
 	margin-top: 2rem;
-	color: var(--planeta-geek-celeste);
-	/* border: 0.1rem solid var(--planeta-geek-green); */
-	border-radius: 0.5rem;
+	color: var(--planeta-geek-green);
 	padding: 2rem 0;
 }
 
 #users_per_group {
 	display: none;
+	text-align: center;
 }
 
 #users_per_group label {
@@ -136,9 +161,8 @@ tbody tr td:nth-child(2) {
 #users_per_group_input {
 	width: 13.5rem;
 	height: 2.5rem;
-	margin-top: 1rem;
 	border-radius: 0.5rem;
-	padding: 0.2rem;
+	padding: 0.5rem;
 }
 
 #groups_generator_button {
@@ -155,4 +179,16 @@ tbody tr td:nth-child(2) {
 #groups_generator_button:active {
 	background-color: var(--white);
 	color: var(--background-sections);
+}
+
+footer {
+	width: 100%;
+	font-size: var(--sm);
+	padding-top: 5rem;
+	padding-bottom: 7rem;
+}
+
+footer a {
+	color: var(--planeta-geek-green);
+	text-decoration: underline;
 }

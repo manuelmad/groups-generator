@@ -1,20 +1,10 @@
-.info-edificio-container {
-	height: 102.4rem;
+section, div {
+	width: 70rem;
+	font-size: var(--lg);
 }
 
-.info-edificio-container {
-	background-image: url('./img/building-landscape-large.png');
-}
-
-h1 {
-	padding: 8rem 1rem 6rem;
-	font-size: var(--xxxlg);
-}
-
-.info-edificio {
-	width: 50rem;
-}
-
-.info-edificio p {
-	font-size: var(--xxlg);
+.groups-container {
+	width: 100rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 }

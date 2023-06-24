@@ -4,12 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Aplicación web para crear recibos de pago del Conjunto 16 Yacambú.">
+	<meta name="description" content="Aplicación web para crear grupos de toneo, basada en archivo Excel.">
 	<meta name= "robots" content= "index, follow">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
 	<title>Generador de Grupos de Torneos</title>
 	<link href="./styles/styles.css" type="text/css" rel="stylesheet" />
 	<link href="./styles/styles-tablets.css" media="screen and (min-width: 600px)" type="text/css" rel="stylesheet" />
@@ -23,45 +22,36 @@
 		<section class="groups-generator__container">
 			<h1>Generador de Grupos de Torneos</h1>
 			<article>
-				<p class="boton-examinar-container">
+				<div class="boton-examinar-container">
 					<label for="file">Importe el archivo excel que contiene a los participantes:</label>
-					<input type="file" id="file" accept=".xls, .xlsx">
-				</p>
+					<p>
+						<input type="file" id="file" accept=".xls, .xlsx">
+					</p>
+				</div>
 				<p id="quantity_notification"></p>
 				<div id="users_per_group">
 					<label for="users_per_group_input">Indique la cantidad de participantes por cada grupo:</label>
-					<input type="number" id="users_per_group_input">
+					<p>
+						<input type="number" id="users_per_group_input">
+					</p>
 					<p><button id="groups_generator_button">Generar Grupos</button></p>
 				</div>
-				
-				<div id = "groups_container" class="groups-container">
-					<!--<table class="groups-table">
-						<thead>
-							<tr>
-								<th id="group_name" colspan="2">
-		
-								</th>
-							</tr>
-							<tr>
-								<th id="user_number_header">N°</th>
-								<th id="user_name_header">Usuario</th>
-							</tr>
-						</thead>
-						<tbody id="group_table_body">
-							<tr>
-								<td id="user_number"></td>
-								<td id="user_name"></td>
-							</tr>
-						</tbody>
-					</table>-->
-				</div>	
+					
 			</article>
 		</section>
+		<section id = "groups_container" class="groups-container">
+			
+		</section>
 	</main>
+	<footer>
+		<section>
+			<p>Creado por <a href="https://manuelmad.github.io/" target="_blank">Manuel Araujo</a></p>
+		</section>
+	</footer>
 	<script src="./src/xlsx.full.min.js"></script>
-	<script src="./FileSaver.min.js"></script>
+	<!-- <script src="./FileSaver.min.js"></script>
 	<script src="./tableexport.min.js"></script>
-	<script type="text/javascript" src="jspdf.min.js"></script> <!-- Script para generar e imprimir archivo .pdf -->
+	<script type="text/javascript" src="jspdf.min.js"></script> -->
 	<script type="text/javascript" src="./src/index.js"></script>
 </body>
 </html>

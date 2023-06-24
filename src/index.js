@@ -41,62 +41,19 @@ function arrayGenerator() {
 		console.log('cantidad_participantes', cantidad_participantes);
 
 		const quantity_notification = document.getElementById("quantity_notification");
-		quantity_notification.innerText = `Hay ${cantidad_participantes} participantes en el torneo.`;
+		quantity_notification.innerText = `¡Hay ${cantidad_participantes} participantes en el torneo!`;
 
 		const users_per_group = document.getElementById("users_per_group");
 		users_per_group.style.display = "block";
 	}
 }
 
-document.querySelector("#file").addEventListener("change", arrayGenerator /*function () {
-	// Obtener el archivo seleccionado
-	let file = document.querySelector("#file").files[0];
-
-	// Separar el nombre del archivo por punto (.) para obtener su tipo
-	let type = file.name.split('.');
-
-	// Mostrar un alert en caso de que el archivo no sea un excel y detener la función
-	if (type[type.length - 1] !== 'xlsx' && type[type.length - 1] !== 'xls') {
-		alert ('Seleccione solo archivos de Excel para importar');
-		return false;
-	}
-
-	const reader = new FileReader();
-	reader.readAsBinaryString(file);
-	reader.onload = (e) => {
-		const data = e.target.result;
-		const zzexcel = window.XLS.read(data, {
-			type: 'binary'
- 		});
-
-		// Limpio el array cada vez que subo un archivo
- 		result = [];
-
-		// const result = []; Lo saqué de la función para usarlo luego para crear una tabla
-
-		// Código para recorrer las hojas del excel e ir agregado sus contenidos en el array "result"
-		for (let i = 0; i < zzexcel.SheetNames.length; i++) {
-			const newData = window.XLS.utils.sheet_to_json(zzexcel.Sheets[zzexcel.SheetNames[i]]);
-			result.push(...newData)
-		}
-		console.log('result', result);
-
-		cantidad_participantes = result.length;
-		console.log('cantidad_participantes', cantidad_participantes);
-
-		const quantity_notification = document.getElementById("quantity_notification");
-		quantity_notification.innerText = `Hay ${cantidad_participantes} participantes en el torneo.`;
-
-		const users_per_group = document.getElementById("users_per_group");
-		users_per_group.style.display = "block";
-	}
-}*/);
+document.querySelector("#file").addEventListener("change", arrayGenerator);
 
 
 // CREAR TABLAS DE GRUPOS
 
 let groups_generator_button = document.getElementById("groups_generator_button");
-//groups_generator_button.addEventListener("click", arrayGenerator);
 groups_generator_button.addEventListener("click", generateGroups);
 
 
@@ -140,6 +97,8 @@ function generateGroups() {
 	console.log("grupos totales", grupos_totales);
 
 	// Ciclo para crear una tabla por cada grupo
+
+	//Variable para cambiar de color
 	let k = 0;
 
 	for(let j=0; j<grupos_totales; j++) {
@@ -147,21 +106,22 @@ function generateGroups() {
 		const thead = document.createElement("thead");
 		const tbody = document.createElement("tbody");
 
+		// Si llegué al final de array de colores, vuelvo al inicio
 		if(k > colors.length-1) {
 			k = 0;
 		}
 		let headColor = colors[k];
 
 		thead.innerHTML = `
-							<tr style="background-color: ${headColor};">
-								<th class="group_name" colspan="2">
-									GRUPO ${alfabeto[j]}
-								</th>
-							</tr>
-							<tr style="background-color: ${headColor};">
-								<th class="user_number_header">N°</th>
-								<th class="user_name_header">Usuario</th>
-							</tr>
+			<tr style="background-color: ${headColor};">
+				<th class="group_name" colspan="2">
+					GRUPO ${alfabeto[j]}
+				</th>
+			</tr>
+			<tr style="background-color: ${headColor};">
+				<th class="user_number_header">N°</th>
+				<th class="user_name_header">Usuario</th>
+			</tr>
 		`;
 
 		table.appendChild(thead);
@@ -179,11 +139,10 @@ function generateGroups() {
 
 			const tbodyRow = document.createElement("tr");
 			tbodyRow.innerHTML = `
-							<tr>
-								<td class="user_number">${i+1}</td>
-								<td class="user_name">${chosen_user.Usuario}</td>
-							</tr>
-
+				<tr>
+					<td class="user_number">${i+1}</td>
+					<td class="user_name">${chosen_user.Usuario}</td>
+				</tr>
 			`
 
 			tbody.appendChild(tbodyRow);
@@ -199,5 +158,3 @@ function generateGroups() {
 		groupsContainer.appendChild(table);
 	}
 }
-
-
