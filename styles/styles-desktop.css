@@ -1,0 +1,20 @@
+.info-edificio-container {
+	height: 102.4rem;
+}
+
+.info-edificio-container {
+	background-image: url('./img/building-landscape-large.png');
+}
+
+h1 {
+	padding: 8rem 1rem 6rem;
+	font-size: var(--xxxlg);
+}
+
+.info-edificio {
+	width: 50rem;
+}
+
+.info-edificio p {
+	font-size: var(--xxlg);
+}

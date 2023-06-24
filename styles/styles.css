@@ -1,0 +1,158 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	/*font-family: 'Quicksand', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
+	font-size: 62.5%;
+	background-color: var(--background-sections);
+	color: var(--white);
+}
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --header-font-color: rgb(117, 105, 105);
+    --nav-left-borders: rgb(24, 24, 24);
+    --background-black: #282828;
+    --background-nav: rgb(40, 40, 40);
+    --background-article: #292e38;
+    --background-sections: #181c23;
+    --planeta-geek-celeste: #03fbfa;
+    --planeta-geek-shadow-celeste: #2e6e70;
+    --planeta-geek-celeste-border: #5fe1e8;
+    --red-notifications: #c40d24;
+    --launches-fucsia: #fe009d;
+    --fucsia-shadow: #BF0076;
+    --palid-red: #FF214F;
+    --vivid-red: #cf2e2e;
+    --planeta-geek-yellow: #FBFA03;
+    --planeta-geek-purple: #7E03FB;
+    --purple-shadow: #5F02BC;
+    --planeta-geek-green: #80FB03;
+    --planeta-geek-blue: #0304FB;
+    --planeta-geek-blue-shadow: #0203BC;
+    --ss: 1.2rem;
+    --sm: 1.4rem;
+    --md: 1.5rem;
+    --lg: 1.8rem;
+    --xlg: 2.2rem;
+}
+
+main {
+	width: 100%;
+	font-size: var(--sm);
+	padding-top: 4rem;
+}
+
+section {
+	width: 30rem;
+	margin: 0 auto;
+}
+
+h1 {
+	text-align: center;
+	font-weight: bold;
+	font-size: var(--xlg);
+	margin-bottom: 2rem;
+	color: var(--white);
+}
+
+div {
+	width: 30rem;
+	margin: 0 auto;
+}
+
+p {
+	text-align: center;
+	margin-top: 1rem;
+}
+
+table {
+	margin: 2rem auto;
+	border-collapse: collapse;
+	min-width: 25rem;
+}
+
+table tr, table td, table th {
+	border: 0.1rem solid var(--white);
+	height: 2rem;
+}
+
+thead tr:nth-child(2) th:first-child {
+	width: 5rem;
+	text-align: center;
+}
+
+tbody tr td:first-child {
+	text-align: center;
+}
+
+tbody tr td:nth-child(2) {
+	padding-left: 1rem;
+}
+
+.logo-container {
+	width: 30rem;
+	height: 13.24rem;
+	background-image: url("./assets/imgs/logo.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.boton-examinar-container {
+	text-align: start;
+}
+
+.boton-examinar-container label {
+	color: var(--planeta-geek-celeste);
+}
+
+#file {
+	margin-top: 2rem;
+}
+
+#quantity_notification {
+	margin-top: 2rem;
+	color: var(--planeta-geek-celeste);
+	/* border: 0.1rem solid var(--planeta-geek-green); */
+	border-radius: 0.5rem;
+	padding: 2rem 0;
+}
+
+#users_per_group {
+	display: none;
+}
+
+#users_per_group label {
+	display: block;
+	margin-top: 2rem;
+}
+
+#users_per_group_input {
+	width: 13.5rem;
+	height: 2.5rem;
+	margin-top: 1rem;
+	border-radius: 0.5rem;
+	padding: 0.2rem;
+}
+
+#groups_generator_button {
+	margin-top: 4rem;
+	width: 15rem;
+	height: 3rem;
+	border-radius: 1.5rem;
+	text-transform: uppercase;
+	background-color: var(--planeta-geek-green);
+	font-weight: bold;
+	border: none;
+}
+
+#groups_generator_button:active {
+	background-color: var(--white);
+	color: var(--background-sections);
+}
